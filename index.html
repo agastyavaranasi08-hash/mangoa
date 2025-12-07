@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mango’s Library – Omniscient Reader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mango’s Library</h1>
+      <p class="subtitle">Manga ↔ LN mapping viewer (MVP)</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div>
+        <label for="seriesFilter">Series:</label>
+        <select id="seriesFilter"></select>
+      </div>
+      <div>
+        <label for="searchInput">Search chapter:</label>
+        <input id="searchInput" type="text" placeholder="e.g. chapter 10" />
+      </div>
+    </section>
+
+    <section>
+      <h2 id="seriesTitle">Chapters</h2>
+      <div id="status" class="status">Loading data…</div>
+      <div class="table-wrapper">
+        <table id="chaptersTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Volume</th>
+              <th>Manga chapter label</th>
+              <th>Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
