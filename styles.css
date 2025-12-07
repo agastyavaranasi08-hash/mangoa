@@ -1,0 +1,137 @@
+/* styles.css */
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b0c10;
+  color: #f4f4f5;
+}
+
+.site-header {
+  background: #111827;
+  border-bottom: 1px solid #1f2933;
+  padding: 1rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+main {
+  padding: 1.5rem 0 3rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.controls label {
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+.controls select,
+.controls input {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #374151;
+  background: #030712;
+  color: #e5e7eb;
+}
+
+.controls input::placeholder {
+  color: #6b7280;
+}
+
+.status {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #1f2933;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #020617;
+}
+
+thead {
+  background: #111827;
+}
+
+th,
+td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #1f2933;
+}
+
+tbody tr:nth-child(even) {
+  background: #020617;
+}
+
+tbody tr:nth-child(odd) {
+  background: #020617;
+}
+
+tbody tr:hover {
+  background: #111827;
+}
+
+.badge-duplicate {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid #f97316;
+  color: #fed7aa;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none; /* hide Format column on tiny screens */
+  }
+}
