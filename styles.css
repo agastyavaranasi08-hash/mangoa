@@ -135,3 +135,80 @@ tbody tr:hover {
     display: none; /* hide Format column on tiny screens */
   }
 }
+/* styles.css – additions/changes */
+
+.controls-search {
+  display: flex;
+  align-items: center;
+}
+
+.detail {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2933;
+  background: #020617;
+}
+
+.detail h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.detail-content p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.detail-value {
+  color: #d1d5db;
+}
+
+.hidden {
+  display: none;
+}
+
+.badge-duplicate {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid #f97316;
+  color: #fed7aa;
+}
+
+.badge-ln-dup {
+  border-color: #3b82f6;
+  color: #bfdbfe;
+}
+
+tr.selected-row {
+  background: #1f2937;
+}
+
+/* hide some columns on very small screens */
+@media (max-width: 600px) {
+  th.col-format,
+  td.col-format {
+    display: none;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none; /* hide manga vol on tiny screens */
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none; /* hide LN vol on tiny screens */
+  }
+}
+
