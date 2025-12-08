@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,51 +9,66 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <h1>Mango’s Library</h1>
+    <div class="container header-inner">
+      <button id="homeButton" class="title-button" type="button">
+        <h1>Mango’s Library</h1>
+      </button>
       <p class="subtitle">Manga ↔ LN mapping viewer (MVP)</p>
     </div>
   </header>
 
   <main class="container">
-    <section class="controls">
-      <div>
-        <label for="seriesFilter">Series:</label>
-        <select id="seriesFilter"></select>
-      </div>
-      <div class="controls-search">
-        <label for="searchInput">Search chapter:</label>
-        <input id="searchInput" type="text" placeholder="e.g. chapter 10" />
+
+    <!-- HOME VIEW -->
+    <section id="homeSection">
+      <h2>Series</h2>
+      <p class="status" id="homeStatus">Loading series…</p>
+      <div id="seriesGrid" class="series-grid">
+        <!-- cards injected by JS -->
       </div>
     </section>
 
-    <section>
-      <h2 id="seriesTitle">Chapters</h2>
-      <div id="status" class="status">Loading data…</div>
-      <div class="table-wrapper">
-        <table id="chaptersTable">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Manga vol</th>
-              <th>Manga chapter</th>
-              <th>LN vol</th>
-              <th>LN chapter</th>
-              <th class="col-format">Format</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- rows injected by JS -->
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <!-- SERIES VIEW -->
+    <section id="seriesSection" class="hidden">
+      <section class="controls">
+        <div>
+          <label for="seriesFilter">Series:</label>
+          <select id="seriesFilter"></select>
+        </div>
+        <div>
+          <label for="groupMode">View:</label>
+          <select id="groupMode">
+            <option value="chapters">Chapters (raw mappings)</option>
+            <option value="lngroups">LN groups</option>
+          </select>
+        </div>
+        <div class="controls-search">
+          <label for="searchInput">Search:</label>
+          <input id="searchInput" type="text" placeholder="chapter 10, ln ch 5, etc." />
+        </div>
+      </section>
 
-    <section id="detailSection" class="detail hidden">
-      <h3>Mapping detail</h3>
-      <div id="detailContent" class="detail-content">
-        <p>Select a row in the table to see more information.</p>
-      </div>
+      <section>
+        <h2 id="seriesTitle">Chapters</h2>
+        <div id="status" class="status">Loading data…</div>
+        <div class="table-wrapper">
+          <table id="chaptersTable">
+            <thead id="tableHead">
+              <!-- header row injected by JS depending on view -->
+            </thead>
+            <tbody>
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="detailSection" class="detail hidden">
+        <h3>Mapping detail</h3>
+        <div id="detailContent" class="detail-content">
+          <p>Select a row in the table to see more information.</p>
+        </div>
+      </section>
     </section>
   </main>
 </body>
